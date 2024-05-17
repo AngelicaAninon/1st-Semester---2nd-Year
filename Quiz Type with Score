@@ -1,0 +1,35 @@
+// English Quiz Program A. Aninon
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void askQuestion(const string &question, const string &correctAnswer, int &score) {
+    string answer;
+    cout << question << endl;
+    cout << "Your answer: ";
+    getline(cin, answer);
+    
+    if (answer == correctAnswer) {
+        cout << "Correct!" << endl;
+        score++;
+    } else {
+        cout << "Incorrect. The correct answer is: " << correctAnswer << endl;
+    }
+    cout << endl;
+}
+
+int main() {
+    int score = 0;
+    const int totalQuestions = 5;
+    
+    askQuestion("1. The cat ___ on the mat.", "sits", score);
+    askQuestion("2. She ___ to the store.", "went", score);
+    askQuestion("3. They ___ playing football.", "are", score);
+    askQuestion("4. I have ___ my homework.", "done", score);
+    askQuestion("5. He ___ to be a doctor.", "wants", score);
+
+    cout << "Your total score is: " << score << " out of " << totalQuestions << endl;
+    
+    return 0;
+}
